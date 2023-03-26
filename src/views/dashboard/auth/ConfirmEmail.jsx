@@ -6,10 +6,12 @@ const ConfirmEmail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   useEffect(() => {
-    axios.put(`http://localhost:9000/auth/confirm/${id}`, null).then(() => {
-      navigate("/auth/login");
-      console.log("hello");
-    });
+    axios
+      .put(`https://backendbughunters.onrender.com/auth/confirm/${id}`, null)
+      .then(() => {
+        navigate("/auth/login");
+        console.log("hello");
+      });
   }, []);
   return <div>ConfirmEmail</div>;
 };

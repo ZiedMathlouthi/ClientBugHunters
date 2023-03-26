@@ -74,7 +74,7 @@ const TableUsers = ({ data, pageSize, role, confirm }) => {
                   <Dropdown.Menu className="dropdown-menu-right">
                     {item.role == "expert" && (
                       <a
-                        href={`http://localhost:9000/data/${item.expertise[0]}`}
+                        href={`https://backendbughunters.onrender.com/data/${item.expertise[0]}`}
                         target="_blank"
                         className="mx-3"
                       >
@@ -83,7 +83,7 @@ const TableUsers = ({ data, pageSize, role, confirm }) => {
                     )}
                     {item.role == "company" && (
                       <a
-                        href={`http://localhost:9000/data/${item.registerCommerce}`}
+                        href={`https://backendbughunters.onrender.com/data/${item.registerCommerce}`}
                         target="_blank"
                         className="mx-3"
                       >
@@ -159,7 +159,7 @@ const TableUsers = ({ data, pageSize, role, confirm }) => {
 
   const getUsers = async () => {
     try {
-      fetch("http://localhost:9000/admin")
+      fetch("https://backendbughunters.onrender.com/admin")
         .then((response) => response.json())
         .then((data) => setUsers(data))
         .then((data) => console.log(data));
@@ -176,7 +176,7 @@ const TableUsers = ({ data, pageSize, role, confirm }) => {
 
   const filterRole = async () => {
     try {
-      fetch("http://localhost:9000/admin")
+      fetch("https://backendbughunters.onrender.com/admin")
         .then((response) => response.json())
         .then((data) => setUsers(data.filter((user) => user.role == role)))
         .then((data) => console.log(data));
@@ -189,7 +189,7 @@ const TableUsers = ({ data, pageSize, role, confirm }) => {
   const filterConfirm = async () => {
     try {
       console.log(confirm);
-      fetch("http://localhost:9000/admin")
+      fetch("https://backendbughunters.onrender.com/admin")
         .then((response) => response.json())
         .then((data) =>
           setUsers(data.filter((user) => user.isConfirmed == confirm))
